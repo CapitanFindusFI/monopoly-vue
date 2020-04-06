@@ -7,6 +7,7 @@ class Property extends Field {
     name,
     cost,
     revenue,
+    color,
   }) {
     super({
       picture,
@@ -16,10 +17,20 @@ class Property extends Field {
       fieldType: FieldTypes.PROPERTY,
     });
 
+    this.color = color;
+
     this.setCanHaveHouses(true);
 
     this.MAX_HOUSES = 5;
     this.CURRENT_HOUSES = 0;
+  }
+
+  getColor() {
+    return this.color;
+  }
+
+  setColor(color) {
+    this.color = color;
   }
 
   getMaxHouses() {
