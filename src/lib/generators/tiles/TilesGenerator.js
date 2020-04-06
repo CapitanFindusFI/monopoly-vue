@@ -7,10 +7,10 @@ import TaxesGenerator from './taxes/TaxesGenerator';
 class TilesGenerator extends Generator {
   static generateAll() {
     return [
-      FieldsGenerator.generateAll(),
-      SpecialsGenerator.generateAll(),
-      CardsGenerator.generateAll(),
-      TaxesGenerator.generateAll(),
+      ...FieldsGenerator.generateAll(),
+      ...SpecialsGenerator.generateAll(),
+      ...CardsGenerator.generateAll(),
+      ...TaxesGenerator.generateAll(),
     ];
   }
 }
