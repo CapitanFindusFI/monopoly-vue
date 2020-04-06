@@ -3,6 +3,7 @@ import UnaffordableError from '../errors/UnaffordableError';
 import IncongruentOwnerError from '../errors/IncongruentOwnerError';
 import AlreadyOwnedError from '../errors/AlreadyOwnedError';
 import MissingRelativesError from '../errors/MissingRelativesError';
+import HouseLimitReachedError from '../errors/HouseLimitReachedError';
 
 const MAX_HOUSES = 5;
 
@@ -21,10 +22,6 @@ class GameController {
   }
 
   playerBuyHouse(player, property) {
-    if (!property.getCanHaveHouses()) {
-      throw new Error('Can\'t buy houses for this type of property');
-    }
-
     if (property.getOwner() !== player) {
       throw new IncongruentOwnerError(property);
     }
@@ -35,7 +32,7 @@ class GameController {
 
     const currentHouses = property.getCurrentHouses();
     if (currentHouses >= MAX_HOUSES) {
-      throw new Error('Maximum number of houses reached for this property');
+      throw new HouseLimitReachedError(property);
     }
 
     const houseCost = property.getHouseCost();
