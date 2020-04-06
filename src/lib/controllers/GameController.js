@@ -1,5 +1,8 @@
 import PlayerController from './PlayerController';
 import UnaffordableError from '../errors/UnaffordableError';
+import IncongruentOwnerError from '../errors/IncongruentOwnerError';
+import AlreadyOwnedError from '../errors/AlreadyOwnedError';
+import MissingRelativesError from '../errors/MissingRelativesError';
 
 const MAX_HOUSES = 5;
 
@@ -23,11 +26,11 @@ class GameController {
     }
 
     if (property.getOwner() !== player) {
-      throw new Error('Player does not have target property');
+      throw new IncongruentOwnerError(property);
     }
 
     if (!this.playerHasPropertyRelatives(player, property)) {
-      throw new Error('Player does not have all property relatives');
+      throw new MissingRelativesError(player, property);
     }
 
     const currentHouses = property.getCurrentHouses();
@@ -45,12 +48,8 @@ class GameController {
   }
 
   playerBuyProperty(player, property) {
-    if (!property.getCanHaveHouses()) {
-      throw new Error('Can\'t buy houses for this type of property');
-    }
-
     if (property.getOwner() !== player) {
-      throw new Error('Player does not have target property');
+      throw new IncongruentOwnerError(property);
     }
 
     const propertyCost = property.getCost();
@@ -62,11 +61,11 @@ class GameController {
 
   playerExchangeProperty(senderPlayer, receiverPlayer, property, cost) {
     if (property.getOwner() !== senderPlayer) {
-      throw new Error('Sender player does not have target property');
+      throw new IncongruentOwnerError(senderPlayer, property);
     }
 
     if (property.getOwner() === receiverPlayer) {
-      throw new Error('Receiver player already has target property');
+      throw new AlreadyOwnedError(receiverPlayer, property);
     }
 
     const receiverBudget = receiverPlayer.getMoney();

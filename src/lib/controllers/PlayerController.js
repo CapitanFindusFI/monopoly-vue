@@ -1,19 +1,11 @@
 class PlayerController {
-  getPlayerProperties(player) {
-    return player.getProperties();
-  }
-
-  setPlayerProperties(player, properties) {
-    player.setProperties(properties);
-  }
-
   getPlayerPropertyById(player, propertyId) {
-    const playerProperties = this.getPlayerProperties(player);
+    const playerProperties = player.getProperties();
     return playerProperties.find((property) => property.id === propertyId);
   }
 
   getPlayerPropertyIndexById(player, propertyId) {
-    const playerProperties = this.getPlayerProperties(player);
+    const playerProperties = player.getProperties();
     return playerProperties.findIndex((property) => property.id === propertyId);
   }
 
@@ -22,10 +14,10 @@ class PlayerController {
   }
 
   addPlayerProperty(player, property) {
-    const playerProperties = this.getPlayerProperties(player);
+    const playerProperties = player.getProperties();
     playerProperties.push(property);
 
-    this.setPlayerProperties(player, playerProperties);
+    player.setProperties(playerProperties);
   }
 
   removePlayerProperty(player, property) {
@@ -36,7 +28,7 @@ class PlayerController {
     }
 
     const updatedProperties = properties.splice(propertyIndex, 1);
-    this.setPlayerProperties(player, updatedProperties);
+    player.setProperties(updatedProperties);
   }
 
   canAffordCost(player, cost) {
