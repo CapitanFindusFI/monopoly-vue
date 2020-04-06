@@ -1,5 +1,5 @@
-import Field from './Field';
-import FieldTypes from '../../types/field.types.enum';
+import Field from '../Field';
+import FieldTypes from '../field.types.enum';
 
 class Property extends Field {
   constructor({
@@ -38,8 +38,8 @@ class Property extends Field {
     this.CURRENT_HOUSES = houses;
   }
 
-  onStepUp() {
-    console.log('Stepped up on a property', this);
+  onStepUp(player) {
+    console.log(`Player ${player.name} stepped up on a property`, this);
   }
 }
 

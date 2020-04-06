@@ -1,5 +1,5 @@
-import Field from './Field';
-import FieldTypes from '../../types/field.types.enum';
+import Field from '../Field';
+import FieldTypes from '../field.types.enum';
 
 class Station extends Field {
   constructor({
@@ -17,8 +17,8 @@ class Station extends Field {
     });
   }
 
-  onStepUp() {
-    console.log('Stepped up on a station', this);
+  onStepUp(player) {
+    console.log(`Player ${player.name} stepped up on a station`, this);
   }
 }
 

@@ -39,7 +39,8 @@ class Tile {
     this.fieldContent = fieldContent;
   }
 
-  onStepUp() {
+  // eslint-disable-next-line no-unused-vars,class-methods-use-this
+  onStepUp(player) {
     throw new Error('Must be implemented in exteding classes');
   }
 }

@@ -1,5 +1,5 @@
 import Tile from '../Tile';
-import TileTypes from '../../types/tile.types.enum';
+import TileTypes from '../tile.types.enum';
 
 class Field extends Tile {
   constructor({
@@ -72,7 +72,8 @@ class Field extends Tile {
     this.canHaveHouses = can;
   }
 
-  onStepUp() {
+  // eslint-disable-next-line no-unused-vars,class-methods-use-this
+  onStepUp(player) {
     throw new Error('Must be implemented in extending classes');
   }
 }

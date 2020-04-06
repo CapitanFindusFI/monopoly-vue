@@ -1,5 +1,5 @@
-import Field from './Field';
-import FieldTypes from '../../types/field.types.enum';
+import Field from '../Field';
+import FieldTypes from '../field.types.enum';
 
 class Society extends Field {
   constructor({
@@ -17,8 +17,8 @@ class Society extends Field {
     });
   }
 
-  onStepUp() {
-    console.log('Stepped up on a society', this);
+  onStepUp(player) {
+    console.log(`Player ${player.name} stepped up on a society`, this);
   }
 }
 
