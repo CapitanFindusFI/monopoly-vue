@@ -5,12 +5,14 @@ class Special extends Tile {
   constructor({
     name,
     picture,
+    index,
     specialType,
   }) {
     super({
       type: TileTypes.SPECIAL,
       name,
       picture,
+      index,
     });
 
     this.specialType = specialType;

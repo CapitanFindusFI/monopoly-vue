@@ -6,6 +6,7 @@ class Player {
 
     this.money = 0;
     this.tile = null;
+    this.active = false;
     this.properties = [];
   }
 
@@ -31,6 +32,14 @@ class Player {
 
   setTile(tile) {
     this.tile = tile;
+  }
+
+  getActive() {
+    return this.active;
+  }
+
+  setActive(flag) {
+    this.active = flag;
   }
 
   getProperties() {

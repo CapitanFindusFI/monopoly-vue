@@ -1,8 +1,9 @@
 class Tile {
-  constructor({ type, name, picture }) {
+  constructor({ type, name, picture, index }) {
     this.type = type;
     this.name = name;
     this.picture = picture;
+    this.index = index;
 
     this.fieldContent = null;
   }
@@ -29,6 +30,14 @@ class Tile {
 
   setPicture(picture) {
     this.picture = picture;
+  }
+
+  getIndex(){
+    return this.index;
+  }
+
+  setIndex(index){
+    this.index = index;
   }
 
   getFieldContent() {

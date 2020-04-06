@@ -4,17 +4,17 @@ import CardTypes from '../CardTypes';
 class Possibility extends Card {
   constructor({
     name,
-    picture
+    picture,
+    index,
+    action,
   }) {
     super({
       name,
       picture,
+      index,
+      action,
       cardType: CardTypes.POSSIBILITY,
     });
-  }
-
-  onStepUp(player) {
-    console.log(`Player: ${player.name} picks a Possibility card`, this);
   }
 }
 

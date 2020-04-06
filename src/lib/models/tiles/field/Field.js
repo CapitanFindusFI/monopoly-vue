@@ -3,8 +3,9 @@ import TileTypes from '../TileTypes';
 
 class Field extends Tile {
   constructor({
-    picture,
     name,
+    picture,
+    index,
     cost,
     revenue,
     fieldType,
@@ -13,6 +14,7 @@ class Field extends Tile {
       type: TileTypes.PROPERTY,
       name,
       picture,
+      index,
     });
     this.cost = cost;
     this.revenue = revenue;

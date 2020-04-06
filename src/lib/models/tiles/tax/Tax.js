@@ -5,11 +5,13 @@ class Tax extends Tile {
   constructor({
     name,
     picture,
+    index,
   }) {
     super({
       type: TileTypes.TAX,
       name,
       picture,
+      index,
     });
   }
 

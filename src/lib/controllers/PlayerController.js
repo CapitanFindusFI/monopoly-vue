@@ -1,4 +1,8 @@
 class PlayerController {
+  setPlayerActive(player) {
+    player.setActive(true);
+  }
+
   getPlayerBudget(player) {
     return player.getMoney();
   }

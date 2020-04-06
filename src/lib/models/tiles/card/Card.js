@@ -5,15 +5,20 @@ class Card extends Tile {
   constructor({
     name,
     picture,
+    index,
+    action,
     cardType,
   }) {
     super({
       type: TileTypes.CARD,
       name,
       picture,
+      index,
     });
 
     this.cardType = cardType;
+    this.action = action;
+
     this.hasBeenPicked = false;
   }
 
@@ -33,9 +38,8 @@ class Card extends Tile {
     this.hasBeenPicked = flag;
   }
 
-  // eslint-disable-next-line class-methods-use-this,no-unused-vars
   onStepUp(player) {
-    throw new Error('Must be implemented in exteding classes');
+    console.log(player, this.action);
   }
 }
 
