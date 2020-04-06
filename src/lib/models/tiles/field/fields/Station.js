@@ -5,12 +5,14 @@ class Station extends Field {
   constructor({
     picture,
     name,
+    index,
     cost,
     revenue,
   }) {
     super({
       picture,
       name,
+      index,
       cost,
       revenue,
       fieldType: FieldTypes.STATION,

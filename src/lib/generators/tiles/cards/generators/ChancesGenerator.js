@@ -16,7 +16,7 @@ class ChancesGenerator extends Generator {
     const card2 = new Chance({
       name: 'lbl.chance.generic',
       picture: PictureUtils.generatePlaceholder('orange'),
-      index: 21,
+      index: 22,
       action: () => {
         console.log(this);
       },

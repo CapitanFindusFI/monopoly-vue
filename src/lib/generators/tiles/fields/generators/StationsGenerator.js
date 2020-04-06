@@ -17,7 +17,7 @@ class StationsGenerator extends Generator {
       name: 'lbl.station.south',
       picture: PictureUtils.generatePlaceholder('#fff'),
       cost: 480,
-      index: 4,
+      index: 5,
     });
   }
 
@@ -26,7 +26,7 @@ class StationsGenerator extends Generator {
       name: 'lbl.station.west',
       picture: PictureUtils.generatePlaceholder('#fff'),
       cost: 480,
-      index: 14,
+      index: 15,
     });
   }
 
@@ -35,7 +35,7 @@ class StationsGenerator extends Generator {
       name: 'lbl.station.north',
       picture: PictureUtils.generatePlaceholder('#fff'),
       cost: 480,
-      index: 24,
+      index: 25,
     });
   }
 
@@ -44,7 +44,7 @@ class StationsGenerator extends Generator {
       name: 'lbl.station.east',
       picture: PictureUtils.generatePlaceholder('#fff'),
       cost: 480,
-      index: 34,
+      index: 35,
     });
   }
 }

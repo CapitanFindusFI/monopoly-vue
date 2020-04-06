@@ -50,7 +50,7 @@ class PropertiesGenerator extends Generator {
       picture,
       name: 'lbl.blue1.name',
       cost: 250,
-      index: 5,
+      index: 6,
     });
 
     const property2 = new Property({
@@ -58,7 +58,7 @@ class PropertiesGenerator extends Generator {
       picture,
       name: 'lbl.blue2.name',
       cost: 250,
-      index: 7,
+      index: 8,
     });
 
     const property3 = new Property({
@@ -66,7 +66,7 @@ class PropertiesGenerator extends Generator {
       picture,
       name: 'lbl.blue3.name',
       cost: 250,
-      index: 8,
+      index: 9,
     });
 
     return [property1, property2, property3];
@@ -81,7 +81,7 @@ class PropertiesGenerator extends Generator {
       picture,
       name: 'lbl.orange1.name',
       cost: 350,
-      index: 10,
+      index: 11,
     });
 
     const property2 = new Property({
@@ -89,7 +89,7 @@ class PropertiesGenerator extends Generator {
       picture,
       name: 'lbl.orange2.name',
       cost: 350,
-      index: 12,
+      index: 13,
     });
 
     const property3 = new Property({
@@ -97,7 +97,7 @@ class PropertiesGenerator extends Generator {
       picture,
       name: 'lbl.orange3.name',
       cost: 400,
-      index: 13,
+      index: 14,
     });
 
     return [property1, property2, property3];
@@ -112,7 +112,7 @@ class PropertiesGenerator extends Generator {
       picture,
       name: 'lbl.brown1.name',
       cost: 450,
-      index: 15,
+      index: 16,
     });
 
     const property2 = new Property({
@@ -120,7 +120,7 @@ class PropertiesGenerator extends Generator {
       picture,
       name: 'lbl.brown2.name',
       cost: 450,
-      index: 17,
+      index: 18,
     });
 
     const property3 = new Property({
@@ -128,7 +128,7 @@ class PropertiesGenerator extends Generator {
       picture,
       name: 'lbl.brown3.name',
       cost: 500,
-      index: 18,
+      index: 19,
     });
 
     return [property1, property2, property3];
@@ -143,7 +143,7 @@ class PropertiesGenerator extends Generator {
       picture,
       name: 'lbl.red1.name',
       cost: 550,
-      index: 20,
+      index: 21,
     });
 
     const property2 = new Property({
@@ -151,7 +151,7 @@ class PropertiesGenerator extends Generator {
       picture,
       name: 'lbl.red2.name',
       cost: 550,
-      index: 22,
+      index: 23,
     });
 
     const property3 = new Property({
@@ -159,7 +159,7 @@ class PropertiesGenerator extends Generator {
       picture,
       name: 'lbl.red3.name',
       cost: 600,
-      index: 23,
+      index: 24,
     });
 
     return [property1, property2, property3];
@@ -174,7 +174,7 @@ class PropertiesGenerator extends Generator {
       picture,
       name: 'lbl.yellow1.name',
       cost: 650,
-      index: 25,
+      index: 26,
     });
 
     const property2 = new Property({
@@ -182,7 +182,7 @@ class PropertiesGenerator extends Generator {
       picture,
       name: 'lbl.yellow2.name',
       cost: 650,
-      index: 26,
+      index: 27,
     });
 
     const property3 = new Property({
@@ -190,7 +190,7 @@ class PropertiesGenerator extends Generator {
       picture,
       name: 'lbl.yellow3.name',
       cost: 700,
-      index: 28,
+      index: 29,
     });
 
     return [property1, property2, property3];
@@ -205,7 +205,7 @@ class PropertiesGenerator extends Generator {
       picture,
       name: 'lbl.green1.name',
       cost: 750,
-      index: 30,
+      index: 31,
     });
 
     const property2 = new Property({
@@ -213,7 +213,7 @@ class PropertiesGenerator extends Generator {
       picture,
       name: 'lbl.green2.name',
       cost: 750,
-      index: 31,
+      index: 32,
     });
 
     const property3 = new Property({
@@ -221,7 +221,7 @@ class PropertiesGenerator extends Generator {
       picture,
       name: 'lbl.green3.name',
       cost: 800,
-      index: 33,
+      index: 34,
     });
 
     return [property1, property2, property3];
@@ -236,7 +236,7 @@ class PropertiesGenerator extends Generator {
       picture,
       name: 'lbl.purple1.name',
       cost: 900,
-      index: 36,
+      index: 37,
     });
 
     const property2 = new Property({
@@ -244,7 +244,7 @@ class PropertiesGenerator extends Generator {
       picture,
       name: 'lbl.purple2.name',
       cost: 1000,
-      index: 38,
+      index: 39,
     });
 
     return [property1, property2];

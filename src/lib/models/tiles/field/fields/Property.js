@@ -5,6 +5,7 @@ class Property extends Field {
   constructor({
     picture,
     name,
+    index,
     cost,
     revenue,
     color,
@@ -13,6 +14,7 @@ class Property extends Field {
     super({
       picture,
       name,
+      index,
       cost,
       revenue,
       fieldType: FieldTypes.PROPERTY,

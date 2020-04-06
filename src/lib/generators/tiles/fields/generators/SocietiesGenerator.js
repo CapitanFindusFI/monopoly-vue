@@ -15,7 +15,7 @@ class SocietiesGenerator extends Generator {
       name: 'lbl.society.electricity',
       picture: PictureUtils.generatePlaceholder('#fff'),
       cost: 250,
-      index: 11,
+      index: 12,
     });
   }
 
@@ -24,7 +24,7 @@ class SocietiesGenerator extends Generator {
       name: 'lbl.society.water',
       picture: PictureUtils.generatePlaceholder('#fff'),
       cost: 250,
-      index: 17,
+      index: 28,
     });
   }
 }

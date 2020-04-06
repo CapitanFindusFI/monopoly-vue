@@ -25,7 +25,7 @@ class PossibilitiesGenerator extends Generator {
     const card3 = new Possibility({
       name: 'lbl.possibility.generic',
       picture: PictureUtils.generatePlaceholder('blue'),
-      index: 32,
+      index: 33,
       action: () => {
         console.log(this);
       },

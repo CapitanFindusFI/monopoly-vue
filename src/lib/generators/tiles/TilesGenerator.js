@@ -13,6 +13,24 @@ class TilesGenerator extends Generator {
       ...TaxesGenerator.generateAll(),
     ];
   }
+
+  static generateOrdered() {
+    return TilesGenerator.generateAll()
+      .sort(TilesGenerator.sortingMethod);
+  }
+
+  static sortingMethod(tileA, tileB) {
+    const indexA = tileA.index;
+    const indexB = tileB.index;
+    if (indexA > indexB) {
+      return 1;
+    }
+    if (indexA < indexB) {
+      return -1;
+    } else {
+      return 0;
+    }
+  }
 }
 
 export default TilesGenerator;

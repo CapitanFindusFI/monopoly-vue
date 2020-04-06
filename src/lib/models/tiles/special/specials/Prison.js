@@ -5,10 +5,12 @@ class Prison extends Special {
   constructor({
     name,
     picture,
+    index,
   }) {
     super({
       name,
       picture,
+      index,
       specialType: SpecialTypes.PRISON,
     });
   }

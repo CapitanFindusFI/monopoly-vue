@@ -13,7 +13,7 @@ class TaxesGenerator extends Generator {
     const tax2 = new Tax({
       name: 'lbl.tax.luxury',
       picture: PictureUtils.generatePlaceholder('#fff'),
-      index: 37,
+      index: 38,
     });
 
     return [tax1, tax2];

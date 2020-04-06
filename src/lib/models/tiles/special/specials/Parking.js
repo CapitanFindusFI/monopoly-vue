@@ -5,10 +5,12 @@ class Parking extends Special {
   constructor({
     name,
     picture,
+    index,
   }) {
     super({
       name,
       picture,
+      index,
       specialType: SpecialTypes.PARKING,
     });
   }

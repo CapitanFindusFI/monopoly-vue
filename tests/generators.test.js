@@ -55,4 +55,16 @@ describe('generators test suite', () => {
     expect(tiles)
       .toHaveLength(40);
   });
+
+  it('should generate ordered tiles', () => {
+    const expected = [
+      ...Array(40)
+        .keys()
+    ];
+    const tiles = TilesGenerator.generateOrdered();
+    const generateIndexes = tiles.map((t) => t.index);
+
+    expect(generateIndexes)
+      .toStrictEqual(expected);
+  });
 });
