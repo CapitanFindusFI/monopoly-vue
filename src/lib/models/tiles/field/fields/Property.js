@@ -22,11 +22,9 @@ class Property extends Field {
 
     this.color = color;
     this.houseCost = houseCost;
+    this.currentHouses = 0;
 
     this.setCanHaveHouses(true);
-
-    this.MAX_HOUSES = 5;
-    this.CURRENT_HOUSES = 0;
   }
 
   getColor() {
@@ -45,20 +43,12 @@ class Property extends Field {
     this.houseCost = cost;
   }
 
-  getMaxHouses() {
-    return this.MAX_HOUSES;
-  }
-
-  setMaxHouses(max) {
-    this.MAX_HOUSES = max;
-  }
-
   getCurrentHouses() {
-    return this.CURRENT_HOUSES;
+    return this.currentHouses;
   }
 
   setCurrentHouses(houses) {
-    this.CURRENT_HOUSES = houses;
+    this.currentHouses = houses;
   }
 
   onStepUp(player) {

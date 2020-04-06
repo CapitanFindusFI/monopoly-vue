@@ -7,6 +7,7 @@ class Player {
     this.money = 0;
     this.tile = null;
     this.active = false;
+    this.inGame = true;
     this.properties = [];
   }
 
@@ -42,22 +43,20 @@ class Player {
     this.active = flag;
   }
 
+  getInGame() {
+    return this.inGame;
+  }
+
+  setInGame(flag) {
+    this.inGame = flag;
+  }
+
   getProperties() {
     return this.properties;
   }
 
   setProperties(properties) {
     this.properties = properties;
-  }
-
-  addProperty(property) {
-    this.properties.push(property);
-  }
-
-  removeProperty(property) {
-    const propertyIndex = this.properties.findIndex((p) => p.id === property.id);
-    if (propertyIndex === -1) throw new Error(`Invalid property: ${JSON.stringify(property)}`);
-    this.properties = this.properties.splice(propertyIndex, 1);
   }
 }
 

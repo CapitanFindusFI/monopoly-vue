@@ -1,16 +1,4 @@
 class PlayerController {
-  setPlayerActive(player) {
-    player.setActive(true);
-  }
-
-  getPlayerBudget(player) {
-    return player.getMoney();
-  }
-
-  setPlayerBudget(player, budget) {
-    player.setMoney(budget);
-  }
-
   getPlayerProperties(player) {
     return player.getProperties();
   }
@@ -51,24 +39,14 @@ class PlayerController {
     this.setPlayerProperties(player, updatedProperties);
   }
 
-  exchangeProperty(fromPlayer, toPlayer, property, cost) {
-    if (!this.playerHasProperty(fromPlayer, property)) {
-      throw new Error('Sender player does not have target property');
-    }
+  canAffordCost(player, cost) {
+    const playerBudget = player.getMoney();
 
-    if (this.playerHasProperty(toPlayer, property)) {
-      throw new Error('Receiver player already has target property');
-    }
+    return playerBudget >= cost;
+  }
 
-    const receiverBudget = this.getPlayerBudget(toPlayer);
-    if (receiverBudget < cost) {
-      throw new Error(`Receive player has less than ${cost} money`);
-    }
-
-    this.removePlayerProperty(fromPlayer, property);
-    this.addPlayerProperty(fromPlayer, property);
-
-    this.setPlayerBudget(toPlayer, (receiverBudget - cost));
+  applyExpense(player, cost) {
+    player.setMoney(player.getMoney() - cost);
   }
 }
 
