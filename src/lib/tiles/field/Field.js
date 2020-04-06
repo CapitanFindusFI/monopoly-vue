@@ -68,8 +68,8 @@ class Field extends Tile {
     return this.canHaveHouses;
   }
 
-  setCanHaveHouses(can) {
-    this.canHaveHouses = can;
+  setCanHaveHouses(flag) {
+    this.canHaveHouses = flag;
   }
 
   // eslint-disable-next-line no-unused-vars,class-methods-use-this
