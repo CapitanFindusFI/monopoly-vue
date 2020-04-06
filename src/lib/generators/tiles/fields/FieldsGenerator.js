@@ -6,9 +6,9 @@ import Generator from '../../Generator';
 class FieldsGenerator extends Generator {
   static generateAll() {
     return [
-      PropertiesGenerator.generateAll(),
-      SocietiesGenerator.generateAll(),
-      StationsGenerator.generateAll(),
+      ...PropertiesGenerator.generateAll(),
+      ...SocietiesGenerator.generateAll(),
+      ...StationsGenerator.generateAll(),
     ];
   }
 }

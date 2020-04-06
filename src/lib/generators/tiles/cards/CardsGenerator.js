@@ -5,8 +5,8 @@ import PossibilitiesGenerator from './generators/PossibilitiesGenerator';
 class CardsGenerator extends Generator {
   static generateAll() {
     return [
-      ChancesGenerator.generateAll(),
-      PossibilitiesGenerator.generateAll(),
+      ...ChancesGenerator.generateAll(),
+      ...PossibilitiesGenerator.generateAll(),
     ];
   }
 }

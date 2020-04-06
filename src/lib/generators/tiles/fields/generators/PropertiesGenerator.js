@@ -7,14 +7,14 @@ class PropertiesGenerator extends Generator {
 
   static generateAll() {
     return [
-      PropertiesGenerator.generatePinkProperties(),
-      PropertiesGenerator.generateBlueProperties(),
-      PropertiesGenerator.generateOrangeProperties(),
-      PropertiesGenerator.generateBrownProperties(),
-      PropertiesGenerator.generateRedProperties(),
-      PropertiesGenerator.generateYellowProperties(),
-      PropertiesGenerator.generateGreenProperties(),
-      PropertiesGenerator.generatePurpleProperties(),
+      ...PropertiesGenerator.generatePinkProperties(),
+      ...PropertiesGenerator.generateBlueProperties(),
+      ...PropertiesGenerator.generateOrangeProperties(),
+      ...PropertiesGenerator.generateBrownProperties(),
+      ...PropertiesGenerator.generateRedProperties(),
+      ...PropertiesGenerator.generateYellowProperties(),
+      ...PropertiesGenerator.generateGreenProperties(),
+      ...PropertiesGenerator.generatePurpleProperties(),
     ];
   }
 
