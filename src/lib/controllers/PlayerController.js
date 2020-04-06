@@ -1,7 +1,21 @@
+import { MAX_TILE_INDEX } from '../const/DefinedConst';
+
 class PlayerController {
   getPlayerPropertyById(player, propertyId) {
     const playerProperties = player.getProperties();
     return playerProperties.find((property) => property.id === propertyId);
+  }
+
+  movePlayer(player, value) {
+    let endTile = player.getTileIndex();
+    for (let index = 0; index < value; index += 1) {
+      endTile += 1;
+      if (endTile === MAX_TILE_INDEX) {
+        endTile = 0;
+      }
+    }
+
+    player.setTileIndex(endTile);
   }
 
   getPlayerPropertyIndexById(player, propertyId) {

@@ -5,7 +5,7 @@ class Player {
     this.name = name;
 
     this.money = 0;
-    this.tile = null;
+    this.tileIndex = null;
     this.active = false;
     this.inGame = true;
     this.properties = [];
@@ -27,12 +27,12 @@ class Player {
     this.money = money;
   }
 
-  getTile() {
-    return this.tile;
+  getTileIndex() {
+    return this.tileIndex;
   }
 
-  setTile(tile) {
-    this.tile = tile;
+  setTileIndex(tileIndex) {
+    this.tileIndex = tileIndex;
   }
 
   getActive() {
