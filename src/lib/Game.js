@@ -2,13 +2,8 @@ import TilesGenerator from './generators/tiles/TilesGenerator';
 
 class Game {
   constructor() {
-    this.tiles = [];
+    this.tiles = TilesGenerator.generateOrdered();
   }
-
-  generateTiles() {
-    const tiles = TilesGenerator.generateOrdered();
-  }
-
 }
 
 export default Game;
