@@ -5,17 +5,9 @@ import Generator from '../../../Generator';
 class SocietiesGenerator extends Generator {
   static generateAll() {
     return [
-      SocietiesGenerator.generateWaterSociety(),
-      SocietiesGenerator.generateElectricitySociety()
+      SocietiesGenerator.generateElectricitySociety(),
+      SocietiesGenerator.generateWaterSociety()
     ];
-  }
-
-  static generateWaterSociety() {
-    return new Society({
-      name: 'lbl.society.water',
-      picture: PictureUtils.generatePlaceholder('#fff'),
-      cost: 250,
-    });
   }
 
   static generateElectricitySociety() {
@@ -23,6 +15,16 @@ class SocietiesGenerator extends Generator {
       name: 'lbl.society.electricity',
       picture: PictureUtils.generatePlaceholder('#fff'),
       cost: 250,
+      index: 11,
+    });
+  }
+
+  static generateWaterSociety() {
+    return new Society({
+      name: 'lbl.society.water',
+      picture: PictureUtils.generatePlaceholder('#fff'),
+      cost: 250,
+      index: 17,
     });
   }
 }

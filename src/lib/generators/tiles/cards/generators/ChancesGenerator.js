@@ -7,6 +7,7 @@ class ChancesGenerator extends Generator {
     const card1 = new Chance({
       name: 'lbl.chance.generic',
       picture: PictureUtils.generatePlaceholder('orange'),
+      index: 7,
       action: () => {
         console.log(this);
       },
@@ -15,6 +16,7 @@ class ChancesGenerator extends Generator {
     const card2 = new Chance({
       name: 'lbl.chance.generic',
       picture: PictureUtils.generatePlaceholder('orange'),
+      index: 21,
       action: () => {
         console.log(this);
       },
@@ -23,6 +25,7 @@ class ChancesGenerator extends Generator {
     const card3 = new Chance({
       name: 'lbl.chance.generic',
       picture: PictureUtils.generatePlaceholder('orange'),
+      index: 36,
       action: () => {
         console.log(this);
       },

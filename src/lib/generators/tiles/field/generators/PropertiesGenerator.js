@@ -35,7 +35,7 @@ class PropertiesGenerator extends Generator {
       picture,
       name: 'lbl.pink2.name',
       cost: 200,
-      index: 2,
+      index: 3,
     });
 
     return [property1, property2];
@@ -50,6 +50,7 @@ class PropertiesGenerator extends Generator {
       picture,
       name: 'lbl.blue1.name',
       cost: 250,
+      index: 5,
     });
 
     const property2 = new Property({
@@ -57,6 +58,7 @@ class PropertiesGenerator extends Generator {
       picture,
       name: 'lbl.blue2.name',
       cost: 250,
+      index: 7,
     });
 
     const property3 = new Property({
@@ -64,6 +66,7 @@ class PropertiesGenerator extends Generator {
       picture,
       name: 'lbl.blue3.name',
       cost: 250,
+      index: 8,
     });
 
     return [property1, property2, property3];
@@ -78,6 +81,7 @@ class PropertiesGenerator extends Generator {
       picture,
       name: 'lbl.orange1.name',
       cost: 350,
+      index: 10,
     });
 
     const property2 = new Property({
@@ -85,6 +89,7 @@ class PropertiesGenerator extends Generator {
       picture,
       name: 'lbl.orange2.name',
       cost: 350,
+      index: 12,
     });
 
     const property3 = new Property({
@@ -92,6 +97,7 @@ class PropertiesGenerator extends Generator {
       picture,
       name: 'lbl.orange3.name',
       cost: 400,
+      index: 13,
     });
 
     return [property1, property2, property3];
@@ -106,6 +112,7 @@ class PropertiesGenerator extends Generator {
       picture,
       name: 'lbl.brown1.name',
       cost: 450,
+      index: 15,
     });
 
     const property2 = new Property({
@@ -113,6 +120,7 @@ class PropertiesGenerator extends Generator {
       picture,
       name: 'lbl.brown2.name',
       cost: 450,
+      index: 17,
     });
 
     const property3 = new Property({
@@ -120,6 +128,7 @@ class PropertiesGenerator extends Generator {
       picture,
       name: 'lbl.brown3.name',
       cost: 500,
+      index: 18,
     });
 
     return [property1, property2, property3];
@@ -134,6 +143,7 @@ class PropertiesGenerator extends Generator {
       picture,
       name: 'lbl.red1.name',
       cost: 550,
+      index: 20,
     });
 
     const property2 = new Property({
@@ -141,6 +151,7 @@ class PropertiesGenerator extends Generator {
       picture,
       name: 'lbl.red2.name',
       cost: 550,
+      index: 22,
     });
 
     const property3 = new Property({
@@ -148,6 +159,7 @@ class PropertiesGenerator extends Generator {
       picture,
       name: 'lbl.red3.name',
       cost: 600,
+      index: 23,
     });
 
     return [property1, property2, property3];
@@ -162,6 +174,7 @@ class PropertiesGenerator extends Generator {
       picture,
       name: 'lbl.yellow1.name',
       cost: 650,
+      index: 25,
     });
 
     const property2 = new Property({
@@ -169,6 +182,7 @@ class PropertiesGenerator extends Generator {
       picture,
       name: 'lbl.yellow2.name',
       cost: 650,
+      index: 26,
     });
 
     const property3 = new Property({
@@ -176,6 +190,7 @@ class PropertiesGenerator extends Generator {
       picture,
       name: 'lbl.yellow3.name',
       cost: 700,
+      index: 28,
     });
 
     return [property1, property2, property3];
@@ -190,6 +205,7 @@ class PropertiesGenerator extends Generator {
       picture,
       name: 'lbl.green1.name',
       cost: 750,
+      index: 30,
     });
 
     const property2 = new Property({
@@ -197,6 +213,7 @@ class PropertiesGenerator extends Generator {
       picture,
       name: 'lbl.green2.name',
       cost: 750,
+      index: 31,
     });
 
     const property3 = new Property({
@@ -204,6 +221,7 @@ class PropertiesGenerator extends Generator {
       picture,
       name: 'lbl.green3.name',
       cost: 800,
+      index: 33,
     });
 
     return [property1, property2, property3];
@@ -218,6 +236,7 @@ class PropertiesGenerator extends Generator {
       picture,
       name: 'lbl.purple1.name',
       cost: 900,
+      index: 36,
     });
 
     const property2 = new Property({
@@ -225,6 +244,7 @@ class PropertiesGenerator extends Generator {
       picture,
       name: 'lbl.purple2.name',
       cost: 1000,
+      index: 38,
     });
 
     return [property1, property2];

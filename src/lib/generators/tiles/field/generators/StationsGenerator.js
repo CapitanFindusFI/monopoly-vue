@@ -5,27 +5,11 @@ import Generator from '../../../Generator';
 class StationsGenerator extends Generator {
   static generateAll() {
     return [
-      StationsGenerator.generateNorthStation(),
-      StationsGenerator.generateEastStation(),
       StationsGenerator.generateSouthStation(),
       StationsGenerator.generateWestStation(),
+      StationsGenerator.generateNorthStation(),
+      StationsGenerator.generateEastStation(),
     ];
-  }
-
-  static generateNorthStation() {
-    return new Station({
-      name: 'lbl.station.north',
-      picture: PictureUtils.generatePlaceholder('#fff'),
-      cost: 480,
-    });
-  }
-
-  static generateEastStation() {
-    return new Station({
-      name: 'lbl.station.east',
-      picture: PictureUtils.generatePlaceholder('#fff'),
-      cost: 480,
-    });
   }
 
   static generateSouthStation() {
@@ -33,6 +17,7 @@ class StationsGenerator extends Generator {
       name: 'lbl.station.south',
       picture: PictureUtils.generatePlaceholder('#fff'),
       cost: 480,
+      index: 4,
     });
   }
 
@@ -41,6 +26,25 @@ class StationsGenerator extends Generator {
       name: 'lbl.station.west',
       picture: PictureUtils.generatePlaceholder('#fff'),
       cost: 480,
+      index: 14,
+    });
+  }
+
+  static generateNorthStation() {
+    return new Station({
+      name: 'lbl.station.north',
+      picture: PictureUtils.generatePlaceholder('#fff'),
+      cost: 480,
+      index: 24,
+    });
+  }
+
+  static generateEastStation() {
+    return new Station({
+      name: 'lbl.station.east',
+      picture: PictureUtils.generatePlaceholder('#fff'),
+      cost: 480,
+      index: 34,
     });
   }
 }

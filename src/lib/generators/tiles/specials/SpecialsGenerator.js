@@ -19,6 +19,7 @@ class SpecialsGenerator extends Generator {
     return new Go({
       name: 'lbl.special.go',
       picture: PictureUtils.generatePlaceholder('#fff'),
+      index: 0,
     });
   }
 
@@ -26,6 +27,7 @@ class SpecialsGenerator extends Generator {
     return new Parking({
       name: 'lbl.special.parking',
       picture: PictureUtils.generatePlaceholder('#fff'),
+      index: 19,
     });
   }
 
@@ -33,6 +35,7 @@ class SpecialsGenerator extends Generator {
     return new Prison({
       name: 'lbl.special.prison',
       picture: PictureUtils.generatePlaceholder('#fff'),
+      index: 29,
     });
   }
 
@@ -40,6 +43,7 @@ class SpecialsGenerator extends Generator {
     return new PrisonTransit({
       name: 'lbl.special.prisontransit',
       picture: PictureUtils.generatePlaceholder('#fff'),
+      index: 9,
     });
   }
 }
