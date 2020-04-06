@@ -1,5 +1,5 @@
 import Tile from '../Tile';
-import TileTypes from '../tile.types.enum';
+import TileTypes from '../TileTypes';
 
 class Card extends Tile {
   constructor({

@@ -1,5 +1,5 @@
 import Special from '../Special';
-import SpecialTypes from '../special.types.enum';
+import SpecialTypes from '../SpecialTypes';
 
 class PrisonTransit extends Special {
   constructor({

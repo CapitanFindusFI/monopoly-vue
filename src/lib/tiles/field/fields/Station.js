@@ -1,5 +1,5 @@
 import Field from '../Field';
-import FieldTypes from '../field.types.enum';
+import FieldTypes from '../FieldTypes';
 
 class Station extends Field {
   constructor({

@@ -1,5 +1,5 @@
 import Card from '../Card';
-import CardTypes from '../card.types.enum';
+import CardTypes from '../CardTypes';
 
 class Chance extends Card {
   constructor({
