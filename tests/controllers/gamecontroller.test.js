@@ -1,10 +1,17 @@
 import GameController from '../../src/lib/GameController';
 import DieController from '../../src/lib/controllers/DieController';
 
-jest.mock('../../src/lib/controllers/DieController');
-
-DieController.prototype.getDiceValue = jest.fn()
-  .mockImplementation(() => 3);
+jest.mock('../../src/lib/controllers/DieController', () => {
+  return jest.fn()
+    .mockImplementation(() => ({
+      roll: jest.fn()
+        .mockImplementation(() => null),
+      getDiceValue: jest.fn()
+        .mockImplementationOnce(() => 3)
+        .mockImplementationOnce(() => 3)
+        .mockImplementationOnce(() => 4),
+    }));
+});
 
 const gameController = new GameController();
 const playerNames = [
@@ -13,7 +20,18 @@ const playerNames = [
   'enrico varriale',
 ];
 
+const spyOnMethods = {
+  handlePlayerStandingOnField: jest.spyOn(gameController, 'handlePlayerStandingOnField'),
+  handlePlayerStandingOnSpecial: jest.spyOn(gameController, 'handlePlayerStandingOnSpecial'),
+  handlePlayerStandingOnTax: jest.spyOn(gameController, 'handlePlayerStandingOnTax'),
+  handlePlayerStandingOnCard: jest.spyOn(gameController, 'handlePlayerStandingOnCard'),
+};
+
 describe('game controller test suite', () => {
+  beforeEach(() => {
+    DieController.mockClear();
+  });
+
   it('should correctly generate game players with default settings', () => {
     gameController.setupGame(playerNames);
 
@@ -57,6 +75,51 @@ describe('game controller test suite', () => {
 
     expect(gameController.getTurnNumber())
       .toBe(2);
+  });
 
+  it('game controller should call correct methods', () => {
+    gameController.setupGame(playerNames);
+    gameController.beginGame();
+
+    expect(spyOnMethods.handlePlayerStandingOnField)
+      .toBeCalled();
+  });
+
+  it('game controller should call correct methods, simplified with a single player', () => {
+    gameController.setupGame(['pippo baudo']);
+    gameController.beginGame();
+
+    let activePlayer = gameController.getActivePlayer();
+    expect(activePlayer.getName())
+      .toBe('pippo baudo');
+    expect(activePlayer.getTileIndex())
+      .toBe(3);
+
+    gameController.nextTurn();
+
+    activePlayer = gameController.getActivePlayer();
+    expect(activePlayer.getName())
+      .toBe('pippo baudo');
+    expect(activePlayer.getTileIndex())
+      .toBe(6);
+
+    gameController.nextTurn();
+
+    activePlayer = gameController.getActivePlayer();
+    expect(activePlayer.getName())
+      .toBe('pippo baudo');
+    expect(activePlayer.getTileIndex())
+      .toBe(10);
+
+    expect(spyOnMethods.handlePlayerStandingOnField)
+      .toHaveBeenCalledTimes(2);
+
+    expect(spyOnMethods.handlePlayerStandingOnSpecial)
+      .toHaveBeenCalledTimes(1);
+  });
+
+  it('game controller should call correct stand-on method', () => {
+    gameController.setupGame(playerNames);
+    gameController.beginGame();
   });
 });
