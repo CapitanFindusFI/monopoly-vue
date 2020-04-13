@@ -5,7 +5,7 @@ class TileController {
     this.tiles = TilesGenerator.generateOrdered();
   }
 
-  getTiles(){
+  getTiles() {
     return this.tiles;
   }
 

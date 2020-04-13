@@ -11,7 +11,7 @@ class SpecialsGenerator extends Generator {
       SpecialsGenerator.generateStart(),
       SpecialsGenerator.generateParking(),
       SpecialsGenerator.generatePrison(),
-      SpecialsGenerator.generatePrisonTransit()
+      SpecialsGenerator.generatePrisonTransit(),
     ];
   }
 

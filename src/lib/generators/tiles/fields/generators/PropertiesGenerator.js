@@ -4,7 +4,6 @@ import PictureUtils from '../../../../utils/PictureUtils';
 import Generator from '../../../Generator';
 
 class PropertiesGenerator extends Generator {
-
   static generateAll() {
     return [
       ...PropertiesGenerator.generatePinkProperties(),

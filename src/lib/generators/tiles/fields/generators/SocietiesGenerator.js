@@ -6,7 +6,7 @@ class SocietiesGenerator extends Generator {
   static generateAll() {
     return [
       SocietiesGenerator.generateElectricitySociety(),
-      SocietiesGenerator.generateWaterSociety()
+      SocietiesGenerator.generateWaterSociety(),
     ];
   }
 

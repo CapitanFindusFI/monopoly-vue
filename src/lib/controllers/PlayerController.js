@@ -16,7 +16,7 @@ class PlayerController {
     return this.players;
   }
 
-  getPlayerByIndex(playerIndex){
+  getPlayerByIndex(playerIndex) {
     return this.players[playerIndex];
   }
 

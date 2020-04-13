@@ -3,12 +3,12 @@
 </template>
 
 <script>
-  import TileMixin from '../../mixins/TileMixin';
+import TileMixin from '../../mixins/TileMixin';
 
-  export default {
-    name: 'TaxTile',
-    mixins: [TileMixin],
-  };
+export default {
+  name: 'TaxTile',
+  mixins: [TileMixin],
+};
 </script>
 
 <style scoped>

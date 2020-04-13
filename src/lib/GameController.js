@@ -14,7 +14,11 @@ class GameController {
     this.playersNumber = 0;
     this.currentPlayerIndex = 0;
 
-    this.gameIsRunning = false;
+    this.isGameRunning = false;
+  }
+
+  getIsGameRunning() {
+    return this.isGameRunning;
   }
 
   getTurnNumber() {
@@ -52,7 +56,7 @@ class GameController {
   }
 
   beginGame() {
-    this.gameIsRunning = true;
+    this.isGameRunning = true;
     this.nextTurn();
   }
 

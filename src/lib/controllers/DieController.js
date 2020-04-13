@@ -13,9 +13,7 @@ class DieController {
   }
 
   getDiceValue() {
-    return this.dice.reduce((value, die) => {
-      return (value + die.getValue());
-    }, 0);
+    return this.dice.reduce((value, die) => (value + die.getValue()), 0);
   }
 
   roll() {
