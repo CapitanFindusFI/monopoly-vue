@@ -6,7 +6,6 @@ import Field from './models/tiles/field/Field';
 import Special from './models/tiles/special/Special';
 import Tax from './models/tiles/tax/Tax';
 
-
 class GameController {
   constructor() {
     this.gameSettings = defaultGameSettings;
@@ -32,6 +31,10 @@ class GameController {
 
   getPlayerByIndex(playerIndex) {
     return this.playerController.getPlayerByIndex(playerIndex);
+  }
+
+  getTiles() {
+    return this.tileController.getTiles();
   }
 
   setupGame(playerNames, gameSettings = {}) {
@@ -95,18 +98,19 @@ class GameController {
     if (field.getCanBeBought()) {
       // ask if user wants to buy
     }
+    console.log(player, field);
   }
 
   handlePlayerStandingOnSpecial(player, special) {
-
+    console.log(player, special);
   }
 
   handlePlayerStandingOnTax(player, tax) {
-
+    console.log(player, tax);
   }
 
   handlePlayerStandingOnCard(player, card) {
-
+    console.log(player, card);
   }
 }
 

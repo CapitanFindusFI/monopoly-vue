@@ -5,6 +5,10 @@ class TileController {
     this.tiles = TilesGenerator.generateOrdered();
   }
 
+  getTiles(){
+    return this.tiles;
+  }
+
   getTileByIndex(tileIndex) {
     return this.tiles[tileIndex];
   }

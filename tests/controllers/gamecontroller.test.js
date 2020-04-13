@@ -1,17 +1,15 @@
 import GameController from '../../src/lib/GameController';
 import DieController from '../../src/lib/controllers/DieController';
 
-jest.mock('../../src/lib/controllers/DieController', () => {
-  return jest.fn()
-    .mockImplementation(() => ({
-      roll: jest.fn()
-        .mockImplementation(() => null),
-      getDiceValue: jest.fn()
-        .mockImplementationOnce(() => 3)
-        .mockImplementationOnce(() => 3)
-        .mockImplementationOnce(() => 4),
-    }));
-});
+jest.mock('../../src/lib/controllers/DieController', () => jest.fn()
+  .mockImplementation(() => ({
+    roll: jest.fn()
+      .mockImplementation(() => null),
+    getDiceValue: jest.fn()
+      .mockImplementationOnce(() => 3)
+      .mockImplementationOnce(() => 3)
+      .mockImplementationOnce(() => 4),
+  })));
 
 const gameController = new GameController();
 const playerNames = [

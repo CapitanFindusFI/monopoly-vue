@@ -9,7 +9,7 @@ class Property extends Field {
     cost,
     revenue,
     color,
-    houseCost
+    houseCost,
   }) {
     super({
       picture,
