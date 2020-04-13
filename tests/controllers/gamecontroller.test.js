@@ -1,14 +1,14 @@
-import PlayerController from '../../src/lib/controllers/PlayerController';
+import GameController from '../../src/lib/controllers/GameController';
 import playerMocks from '../mocks/player.mock';
 
-const playerController = new PlayerController();
-const defaultPlayer = playerMocks.getPlayer('foobar');
+const gameController = new GameController();
+const defaultPlayer = playerMocks.getPlayer('foobar')
 
-describe('player controller test suite', () => {
+describe('game controller test suite', () => {
   let usePlayer;
 
   beforeEach(() => {
-    usePlayer = defaultPlayer;
+    usePlayer = defaultPlayer();
   });
 
   it('should correctly move player for a few tiles', () => {

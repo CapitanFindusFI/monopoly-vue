@@ -8,9 +8,21 @@ class DieController {
     ];
   }
 
-  roll(dice) {
-    const value = Math.floor(Math.random() * (Math.floor(6) - Math.ceil(1) + 1)) + Math.ceil(1);
-    dice.setValue(value);
+  constructor() {
+    this.dice = DieController.generateDice();
+  }
+
+  getDiceValue() {
+    return this.dice.reduce((value, die) => {
+      return (value + die.getValue());
+    }, 0);
+  }
+
+  roll() {
+    this.dice.forEach((die) => {
+      const value = Math.floor(Math.random() * 6) + 1;
+      die.setValue(value);
+    });
   }
 }
 

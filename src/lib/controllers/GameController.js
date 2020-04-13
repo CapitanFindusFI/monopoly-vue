@@ -1,15 +1,71 @@
 import PlayerController from './PlayerController';
+import DieController from './DieController';
+import PropertyController from './PropertyController';
 import UnaffordableError from '../errors/UnaffordableError';
 import IncongruentOwnerError from '../errors/IncongruentOwnerError';
+import HouseLimitReachedError from '../errors/HouseLimitReachedError';
 import AlreadyOwnedError from '../errors/AlreadyOwnedError';
 import MissingRelativesError from '../errors/MissingRelativesError';
-import HouseLimitReachedError from '../errors/HouseLimitReachedError';
+import defaultGameSettings from '../settings/game.settings';
+import PlayerGenerator from '../generators/player/PlayerGenerator';
 
 const MAX_HOUSES = 5;
 
 class GameController {
   constructor() {
+    this.gameSettings = defaultGameSettings;
+
     this.playerController = new PlayerController();
+    this.dieController = new DieController();
+    this.propertyController = new PropertyController();
+
+    this.turnNumber = 0;
+    this.players = [];
+    this.currentPlayerIndex = 0;
+  }
+
+  getTurnNumber() {
+    return this.turnNumber;
+  }
+
+  getPlayers() {
+    return this.players;
+  }
+
+  getCurrentPlayerIndex() {
+    return this.currentPlayerIndex;
+  }
+
+  getCurrentPlayer() {
+    return this.players[this.currentPlayerIndex];
+  }
+
+  beginGame(playerNames, gameSettings = {}) {
+    this.gameSettings = { ...defaultGameSettings, ...gameSettings };
+    this.players = PlayerGenerator.generatePlayers(playerNames, this.gameSettings.playersInitialMoney);
+    this.nextTurn();
+  }
+
+  nextTurn() {
+    if (this.turnNumber > 0) {
+      if (this.currentPlayerIndex === this.players.length - 1) {
+        this.currentPlayerIndex = 0;
+      } else {
+        this.currentPlayerIndex += 1;
+      }
+    }
+
+    this.players.forEach((player, index) => player.setActive(index === this.currentPlayerIndex));
+
+    // roll the dice
+    this.dieController.roll();
+
+    const activePlayer = this.getCurrentPlayer();
+    const moveValue = this.dieController.getDiceValue();
+
+    this.playerController.movePlayer(activePlayer, moveValue);
+
+    this.turnNumber += 1;
   }
 
   playerHasPropertyRelatives(player, property) {

@@ -1,10 +1,11 @@
 class Player {
   constructor({
     name,
+    money,
   }) {
     this.name = name;
+    this.money = money;
 
-    this.money = 0;
     this.tileIndex = null;
     this.active = false;
     this.inGame = true;
