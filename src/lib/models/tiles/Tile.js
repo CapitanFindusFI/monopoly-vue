@@ -1,11 +1,16 @@
 class Tile {
-  constructor({ type, name, picture, index }) {
+  constructor({
+    type,
+    name,
+    picture,
+    index,
+  }) {
     this.type = type;
     this.name = name;
     this.picture = picture;
     this.index = index;
 
-    this.fieldContent = null;
+    this.canBeBought = false;
   }
 
   getType() {
@@ -32,20 +37,20 @@ class Tile {
     this.picture = picture;
   }
 
-  getIndex(){
+  getIndex() {
     return this.index;
   }
 
-  setIndex(index){
+  setIndex(index) {
     this.index = index;
   }
 
-  getFieldContent() {
-    return this.fieldContent;
+  setCanBeBought(flag) {
+    this.canBeBought = flag;
   }
 
-  setFieldContent(fieldContent) {
-    this.fieldContent = fieldContent;
+  getCanBeBought() {
+    return this.canBeBought;
   }
 
   // eslint-disable-next-line no-unused-vars,class-methods-use-this

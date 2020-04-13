@@ -6,7 +6,7 @@ class Player {
     this.name = name;
     this.money = money;
 
-    this.tileIndex = null;
+    this.tileIndex = 0;
     this.active = false;
     this.inGame = true;
     this.properties = [];

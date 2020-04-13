@@ -20,10 +20,10 @@ class Field extends Tile {
     this.revenue = revenue;
     this.fieldType = fieldType;
 
-    this.owner = null;
     this.relatives = [];
-
     this.canHaveHouses = false;
+
+    this.setCanBeBought(true);
   }
 
   getCost() {

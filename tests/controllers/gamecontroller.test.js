@@ -1,40 +1,62 @@
-import GameController from '../../src/lib/controllers/GameController';
-import playerMocks from '../mocks/player.mock';
+import GameController from '../../src/lib/GameController';
+import DieController from '../../src/lib/controllers/DieController';
+
+jest.mock('../../src/lib/controllers/DieController');
+
+DieController.prototype.getDiceValue = jest.fn()
+  .mockImplementation(() => 3);
 
 const gameController = new GameController();
-const defaultPlayer = playerMocks.getPlayer('foobar')
+const playerNames = [
+  'pippo baudo',
+  'raimondo vianello',
+  'enrico varriale',
+];
 
 describe('game controller test suite', () => {
-  let usePlayer;
+  it('should correctly generate game players with default settings', () => {
+    gameController.setupGame(playerNames);
 
-  beforeEach(() => {
-    usePlayer = defaultPlayer();
+    const players = gameController.getPlayers();
+    const playersMoney = players.map((p) => p.getMoney());
+    expect(playersMoney)
+      .toEqual([2000, 2000, 2000]);
   });
 
-  it('should correctly move player for a few tiles', () => {
-    playerController.movePlayer(usePlayer, 5);
+  it('should correctly generate game players with overwritten settings', () => {
+    gameController.setupGame(playerNames, {
+      playersInitialMoney: 3000,
+    });
 
-    expect(usePlayer.getTileIndex())
-      .toBe(5);
+    const players = gameController.getPlayers();
+    const playersMoney = players.map((p) => p.getMoney());
 
-    playerController.movePlayer(usePlayer, 10);
+    expect(playersMoney)
+      .toEqual([3000, 3000, 3000]);
+  });
 
-    expect(usePlayer.getTileIndex())
-      .toBe(15);
+  it('should correctly begin game and move two players', () => {
+    gameController.setupGame(playerNames);
+    gameController.beginGame();
 
-    playerController.movePlayer(usePlayer, 3);
+    let activePlayer = gameController.getActivePlayer();
 
-    expect(usePlayer.getTileIndex())
-      .toBe(18);
+    expect(activePlayer.getName())
+      .toBe('pippo baudo');
+    expect(activePlayer.getTileIndex())
+      .toBe(3);
 
-    playerController.movePlayer(usePlayer, 2);
+    gameController.nextTurn();
 
-    expect(usePlayer.getTileIndex())
-      .toBe(20);
+    activePlayer = gameController.getActivePlayer();
 
-    playerController.movePlayer(usePlayer, 20);
+    expect(activePlayer.getName())
+      .toBe('raimondo vianello');
+    expect(activePlayer.getTileIndex())
+      .toBe(3);
 
-    expect(usePlayer.getTileIndex())
-      .toBe(1);
+    expect(gameController.getTurnNumber())
+      .toBe(2);
+
   });
 });
