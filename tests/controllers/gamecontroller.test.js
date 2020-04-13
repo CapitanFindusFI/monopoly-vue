@@ -117,9 +117,4 @@ describe('game controller test suite', () => {
     expect(spyOnMethods.handlePlayerStandingOnSpecial)
       .toHaveBeenCalledTimes(1);
   });
-
-  it('game controller should call correct stand-on method', () => {
-    gameController.setupGame(playerNames);
-    gameController.beginGame();
-  });
 });
